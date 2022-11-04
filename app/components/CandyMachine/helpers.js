@@ -4,7 +4,7 @@ import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import { SystemProgram } from "@solana/web3.js";
 import { LAMPORTS_PER_SOL, SYSVAR_RENT_PUBKEY, TransactionInstruction } from "@solana/web3.js";
 
-// CLI Properties Given to us
+// Propriedades que a CLi nos fornece 
 const candyMachineProgram = new web3.PublicKey("cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ");
 
 const TOKEN_METADATA_PROGRAM_ID = new web3.PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");

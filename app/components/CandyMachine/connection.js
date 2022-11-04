@@ -3,7 +3,7 @@ import { Transaction } from "@solana/web3.js";
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
 
 export const getErrorForTransaction = async (connection, txid) => {
-    // wait for all confirmation before geting transaction
+    // esperando por todas as confirmações antes de obter a transação
     await connection.confirmTransaction(txid, "max");
 
     const tx = await connection.getParsedConfirmedTransaction(txid);
@@ -14,7 +14,7 @@ export const getErrorForTransaction = async (connection, txid) => {
             const regex = /Error: (.*)/gm;
             let m;
             while ((m = regex.exec(log)) !== null) {
-                // This is necessary to avoid infinite loops with zero-width matches
+                // Isso é necessário para evitar loops infinitos 
                 if (m.index === regex.lastIndex) {
                     regex.lastIndex++;
                 }
@@ -109,7 +109,7 @@ export const sendTransactions = async (
         instructions.forEach((instruction) => transaction.add(instruction));
         transaction.recentBlockhash = block.blockhash;
         transaction.setSigners(
-            // fee payed by the wallet owner
+            // Taxa paga pelo owner da wallet
             wallet.publicKey,
             ...signers.map((s) => s.publicKey)
         );
@@ -191,7 +191,7 @@ export const sendTransaction = async (
         transaction.setSigners(...signers.map((s) => s.publicKey));
     } else {
         transaction.setSigners(
-            // fee payed by the wallet owner
+            // Taxa paga pelo owner da carteira
             wallet.publicKey,
             ...signers.map((s) => s.publicKey)
         );
@@ -250,7 +250,7 @@ export const sendTransactionWithRetry = async (
         transaction.setSigners(...signers.map((s) => s.publicKey));
     } else {
         transaction.setSigners(
-            // fee payed by the wallet owner
+            // Taxa paga pelo owner da carteira
             wallet.publicKey,
             ...signers.map((s) => s.publicKey)
         );

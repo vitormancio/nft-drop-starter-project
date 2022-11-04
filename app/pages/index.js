@@ -1,7 +1,7 @@
 import React from "react";
 
-// Constants
-const TWITTER_HANDLE = "_buildspace";
+// Constantes
+const TWITTER_HANDLE = "web3dev";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const Home = () => {
@@ -10,11 +10,11 @@ const Home = () => {
             <div className="container">
                 <div className="header-container">
                     <p className="header">🍭 Candy Drop</p>
-                    <p className="sub-text">NFT drop machine with fair mint</p>
+                    <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
                 </div>
                 <div className="footer-container">
-                    <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`built on @${TWITTER_HANDLE}`}</a>
+                <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
+                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`feito por @${TWITTER_HANDLE}`}</a>
                 </div>
             </div>
         </div>
